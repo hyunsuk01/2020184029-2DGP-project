@@ -51,4 +51,19 @@ while running:
     update_canvas()
     handle_events()
 
+    if dir == 1:
+        if char_x >= Width // 2 and bg_x < 3840 - Width:
+            bg_x += char_speed * bg_speed
+            map_x += char_speed
+        elif char_x < Width - 25:
+            char_x += char_speed
+    elif dir == -1:
+        if char_x == -1:
+            bg_x -= char_speed * bg_speed
+            map_x -= char_speed
+        elif char_x > 25:
+            char_x -= char_speed
+
+    delay(0.01)
+
 close_canvas()
